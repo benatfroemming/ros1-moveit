@@ -1,4 +1,4 @@
-name: Build ROS + MoveIt Docker
+name: Build ROS + MoveIt Docker 
 
 on:
   push:
