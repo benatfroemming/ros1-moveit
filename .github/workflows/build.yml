@@ -1,28 +1,23 @@
-# .github/workflows/build.yml
 name: Build ROS + MoveIt Docker
 
 on:
   push:
     branches:
-      - main   # triggers on push to main
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the repository
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # 2. Log in to Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 3. Set up Docker Buildx (no cloud driver)
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -33,4 +28,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ros1-moveit:latest
+
 
