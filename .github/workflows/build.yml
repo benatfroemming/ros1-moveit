@@ -27,6 +27,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ros1-moveit:latest
+          tags: bpro777/ros1-moveit:latest
 
 
