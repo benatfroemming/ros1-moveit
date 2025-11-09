@@ -6,6 +6,11 @@ RUN apt-get update && apt-get install -y \
     ros-noetic-moveit \
     ros-noetic-moveit-visual-tools \
     ros-noetic-rviz \
+    ros-noetic-effort-controllers \
+    ros-noetic-position-controllers \
+    ros-noetic-joint-trajectory-controller \
+    ros-noetic-ros-controllers \
+    ros-noetic-gazebo-ros-control \
     python3-pip \
     git \
     && rm -rf /var/lib/apt/lists/*
